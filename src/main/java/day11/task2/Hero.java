@@ -1,13 +1,16 @@
 package day11.task2;
 
-public abstract class Hero {
+public abstract class Hero implements PhysAttack {
     final static int MAX_HEALTH = 100;
     final static int MIN_HEALTH = 0;
     private int health;
     private int physDef;
     private int magicDef;
     private int physAtt;
-    private int magicAtt;
+
+    public Hero() {
+        health = 100;
+    }
 
     public int getHealth() {
         return health;
@@ -41,11 +44,9 @@ public abstract class Hero {
         this.physAtt = physAtt;
     }
 
-    public int getMagicAtt() {
-        return magicAtt;
-    }
-
-    public void setMagicAtt(int magicAtt) {
-        this.magicAtt = magicAtt;
+    @Override
+    public void physicalAttack(Hero hero) {
+        int damage = (getPhysAtt() - getPhysAtt() * hero.getPhysDef() / 100);
+        hero.setHealth(Math.max(hero.getHealth() - damage, MIN_HEALTH));
     }
 }

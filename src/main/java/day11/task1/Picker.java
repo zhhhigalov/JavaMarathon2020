@@ -27,7 +27,7 @@ public class Picker implements Worker {
     @Override
     public void doWork() {
         salary += 80;
-        houseName.setCountPickedOrders(1);
+        houseName.incrementCountPickedOrders();
     }
 
     @Override
