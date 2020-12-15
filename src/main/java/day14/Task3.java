@@ -18,7 +18,6 @@ public class Task3 {
         List<Person> list = new ArrayList<>();
 
         try {
-            int counter = 0;
             Scanner in = new Scanner(file);
             while (in.hasNextLine()) {
                 String[] array = in.nextLine().split(" ");
@@ -28,12 +27,10 @@ public class Task3 {
             }
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
-            list.clear();
         } catch (IOException e) {
             System.out.println("Некорректный входной файл");
-            list.clear();
         }
-        return list;
+        return null;
     }
 }
 

@@ -13,6 +13,7 @@ public class Task1 {
     }
 
     public static void printSumDigits(File file) {
+
         int sum = 0, counter = 0;
         try {
             Scanner in = new Scanner(file);
@@ -20,17 +21,14 @@ public class Task1 {
                 sum += in.nextInt();
                 counter++;
             }
+
+            if (counter != 10) throw new IOException();
+            System.out.println(sum);
+
         } catch (FileNotFoundException e) {
             System.out.println("Файл не найден");
-            return;
-        }
-
-        if (counter == 10) System.out.println(sum);
-        else try {
-            throw new IOException();
         } catch (IOException e) {
             System.out.println("Некорректный входной файл");
         }
-
     }
 }

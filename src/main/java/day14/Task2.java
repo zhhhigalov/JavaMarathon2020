@@ -33,9 +33,7 @@ public class Task2 {
             System.out.println("Файл не найден");
         } catch (IOException e) {
             System.out.println("Некорректный входной файл");
-            list.clear();
-            return list;
         }
-        return list;
+        return null;
     }
 }
